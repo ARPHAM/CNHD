@@ -37,7 +37,6 @@ sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
 for word, count in sorted_words:
     print(f"{word}: {count}")
 
-
 # Sentiment Analysis: Phân tích cảm xúc với TextBlob
 processed_text = ' '.join(tokens)
 blob = TextBlob(processed_text)
