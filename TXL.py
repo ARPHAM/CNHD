@@ -17,7 +17,6 @@ nltk.download('wordnet')
 # Đọc dữ liệu từ file .txt
 with open('sample_text.txt', 'r', encoding='utf-8') as file:
     text_data = file.read()
-print(f"Văn bản sau khi đọc: {text_data}")
 
 # 1. Chuyển thành chữ thường
 text_data = text_data.lower()
