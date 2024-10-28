@@ -32,20 +32,20 @@ lemmatizer = WordNetLemmatizer()
 tokens = [lemmatizer.lemmatize(word) for word in tokens if word.isalpha() and word not in stopwords.words('english')]
 print(f"Văn bản loại bỏ từ dừng và chuyển về thể gốc: {tokens}")
 
-# 4. BOW: Đếm tần số xuất hiện của các từ và sắp xếp các từ theo tần số xuất hiện
+# BOW: Đếm tần số xuất hiện của các từ và sắp xếp các từ theo tần số xuất hiện
 word_counts = Counter(tokens)
 sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
 print("Từ và tần số xuất hiện:")
 for word, count in sorted_words:
     print(f"{word}: {count}")
 
-# 5. Sentiment Analysis: Phân tích cảm xúc với TextBlob
+# Sentiment Analysis: Phân tích cảm xúc với TextBlob
 processed_text = ' '.join(tokens)
 blob = TextBlob(processed_text)
 sentiment = blob.sentiment
 print(f"Phân tích cảm xúc: {sentiment}")
 
-# 6. N-gram (bigram và trigram)
+# N-gram (bigram và trigram)
 def generate_ngrams(tokens, n):
     ngrams = zip(*[tokens[i:] for i in range(n)])
     return [' '.join(ngram) for ngram in ngrams]
