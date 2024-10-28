@@ -6,7 +6,6 @@ from textblob import TextBlob
 import ssl
 from collections import Counter
 
-
 # Bỏ qua chứng chỉ SSL để tránh lỗi tải xuống
 ssl._create_default_https_context = ssl._create_unverified_context
 
